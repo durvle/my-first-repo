@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Advance Array Methods</title>
+</head>
+<body>
+    <script>
+
+    // .map method
+        // const numbers = [1, 2, 3, 4, 5];
+
+        // const doubledNumbers = numbers.map(number => {
+        //     return number * 2
+        // });
+
+        // console.log(doubledNumbers);
+        // .................................................................
+        // const busTimes = ["00:00", "05:00", "10:00", "15:00", "20:00"];
+        
+        // for(let i = 0; i <busTimes.length; i++){
+        //     // console.log(i)
+        //     console.log(busTimes[i])
+        // }
+
+        // busTimes.forEach((time, index) => {
+        //     console.log(time, index);
+        //     // if this is the first item in the arry consol.log 'First Bus: ...'
+        //     // if this is the last item in the array console.log 'Last Bus: ...'
+        //     if (index === 0){
+        //     console.log(`First Bus: ${time}`);
+        //     } else if (index === busTimes.length - 1) {
+        //         console.log(`Last Bus: ${time}`);
+        //     } else {
+        //     console.log(time);
+        // }
+            
+        // })
+
+// .filter
+        // const numbers = [1,2,3,4,5];
+
+        // const numbersLessThanThree = numbers.filter((number, ) => {
+        //     return number < 3;
+        // });
+
+        // console.log(numbersLessThanThree);
+
+        // const names = ['Sam', 'Beyonce', 'Kelly', 'Michelle', 'Dan', 'Bob'];
+
+        // const peopleWithThreeLetterNames = names.filter((name) => {
+        //     return name.length < 4
+        // });
+        // console.log(peopleWithThreeLetterNames)
+
+
+        const users = [
+            {first: 'Sam', last: 'Jenkins', age: 12 },
+            {first: 'James', last: 'Bond', age: 45}
+        ];
+
+        const peopleWithThreeLetterNames = users.filter((user) => {
+            return user.first.length <4
+        });
+
+        console.log(peopleWithThreeLetterNames)
+
+        const stringNamesOfUserWithThreeLetterNames = 
+        peopleWithThreeLetterNames.map((user) => {
+            return `${user.first} ${user.last}`
+        })
+
+        console.log
+        </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>jQuery To Do List App</title>
+</head>
+<body>
+  <div class="container">
+    <h1>jQuery To Do List App</h1>
+    <form>
+      <label for="item">Add an item:</label>
+      <input class="" type="text" id="item" placeholder="Do JavaScript homework...">
+      <input type="submit" value="Add Item">
+    </form>
+    <ul>
+      <!-- To do items get added dynamically here -->
+    </ul>
+  </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<script>
+$(document).ready(function(){
+  $('form').on('submit', function(event){
+    // when user clicks button, the page doesn't reload
+    event.preventDefault();
+    // And the text from the input is put in the list
+    const $textInput = $('input[type=text]');
+    //get text from input
+    const message = $textInput.val();
+    // the text from the input to go in the list item
+    // add a span with a class of .todo
+    const newToDo = `<li>
+      <span class='todo'></span>
+        ${message}</li>`;
+    // add a list item to the page(li)  
+    $('ul').append(newToDo);
+    // clear the input after click
+    $textInput.val('');
+  });
+    
+    // attach an event listener to the parent of the appended elements (because they are not there to be attached to)
+  $('ul').on('click', 'li', function(){
+      // need to be able to check boxes in the list items...so, first we need to find that particuar box
+      const $checkbox = $(this).find('span');
+      // span.todo changes to span.done when clicked
+      $checkbox.toggleClass('done')
+      $(this).toggleClass('completed');
+
+  });
+
+});
+
+// cache $(this) or $('ul')
+// add a delete GamepadButton
+// make the items draggable + droppable
+// make the items fade out when they're checked
+// move the items to the bottom of the list when they're complete
+// *always move the completed ones to the bottom (even if there are new items after they are completed)
+</script>
+
+</body>
+</html>

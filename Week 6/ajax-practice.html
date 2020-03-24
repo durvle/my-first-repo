@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Search for a year</h2>
+    <form action="submit">
+        <input type="text"/>
+        <input type="submit"/>
+    </form>
+    <p>The first mission in this year is: <span>nothing!</span></p>
+    <h3>The rest of the missions are: </h3>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+    <script>
+        let allData=[];
+        $(document).ready(function(){
+        $('form').on('submit', function(event){
+            event.preventDefault(); //prevents reloading of page//
+            // when the form is submitted
+            // get the value from the input
+            const year = $('input[type=text]').val();
+            // use that value to make an ajax call
+            getData(year);
+            });
+        });
+
+        const getData = (whatYear)=> {
+            $.ajax({
+                url: `https://api.spacexdata.com/v3/launches?launch_year=${whatYear}`,
+                method:'GET',
+                dataType:'json',
+                // data:{
+                //     launch_year:whatYear
+                // }
+            }).then(response =>{
+                $('span').text(response[0].mission_name)
+                allData=response;
+                addAllOtherMissions(allData);
+                })
+            };
+                
+                // console.log(response[0].mission_name);
+
+        const addAllOtherMissions =(missions)=>{
+            const allMissions = missions.map(mission =>{
+                return`<li>${mission.mission_name}</li>`
+            })
+            allMissions.forEach(mission =>{
+                $('ul').append(mission);
+            })
+        }
+        </script>
+</body>
+</html>

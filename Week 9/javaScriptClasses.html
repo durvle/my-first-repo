@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Classes</title>
+</head>
+<body>
+    <script>
+    //     const player = {
+    //         health: 100,
+    //         location: {
+    //             x: 0,
+    //             y: 0
+    //         },
+    //         power: [],
+    //         equipment: [],
+    //         walk: function() {
+    //         // ...code to make your player walk around
+    //     },
+    //     attach: function() {
+    //         // ...code to make your player attack
+    //     }
+    // };
+
+    // const enemy = player;
+    // enemy.health = 200;
+
+    // enemy.equipment = ["flame thrower"];
+
+    // console.log(enemy, player);
+
+    // class Character {
+    //     constructor(health, equipment) {
+    //         this.equipment = [];
+    //         this.health = 100;
+    //         this.location = {
+    //             x: 0,
+    //             y: 0
+    //         }
+    //     }
+    //     walk() {
+    //         // code to make character walk around
+    //     }
+    //     attack()  {
+    //         // code to make character attack
+    //     }
+    // }
+    //     const player = new Character(100, ['sword, shield']);
+    //     const enemy = new Character(300, ['hammer']);
+
+    //     class Dragon extends Character {
+    //         // Dragon uses Character model
+    //         constructor(health, equipment, color) 
+    //             super(health, equipment);
+    //             this.color = color;
+    //         {
+    //             // super (a keyword) function calls the original constructor (Character)
+    //             this.color = "purple";
+    //         }
+    //         breatheFire() {
+    //             // code to breathe fire
+    //         }
+    //     }
+
+    //     const viserion = new Dragon(300, ["spikey tail"]);
+
+    // console.log(viserion);
+// set engine to v8 or v12
+// classes always use UpperCase
+class MotorEngine {
+        constructor(enginePower) {
+          this.engineIsRunning = false;
+          this.enginePower = enginePower;
+        }
+        startEngine() {
+          this.engineIsRunning = true; 
+        }
+        shutOffEngine() {
+          this.engineIsRunning = false; 
+        }
+    }
+      class Car extends MotorEngine {
+        constructor(color, enginePower) {
+          super(enginePower);
+          this.color = color;
+        }
+      
+
+      turnKey() {
+          this.engineIsRunning = true;
+
+          this.startEngine();
+      }
+    }
+      const redCar = new Car("red", 12);
+
+      redCar.turnKey();
+      console.log(redCar.engineIsRunning);
+// How can I pass 8 or 12 as the second argument of my new Car("red", 8) and have it set the enginePower property of the base MotorEngine class 
+
+    // const engine1 = new MotorEngine();
+    // const engine2 = new MotorEngine();
+    // console.log(engine);
+    // engine.startEngine();
+    // console.log(engine);
+
+    class Character {
+        constructor(health=100) {
+            this.health = health;
+            this.location = {
+                x: 0,
+                y: 0
+            }
+        }
+    slayDragon(dragon) {
+        console.log(dragon);
+        console.log(this)
+        // dragon.health -= this.health
+
+
+ }
+}
+
+
+class Dragon extends Character {
+    constructor(name) {
+        super();
+        this.health = 5000;
+        this.name = name;
+    }
+}
+
+const player = new Character();
+
+const drogon = new Dragon()
+const viserion = new Dragon()
+const barney = new Dragon("barney");
+
+player.slayDragon(barney);
+console.log(barney);
+
+        </script>
+         -->
+
+<script>
+    // const pizza = {
+    //     pie: [
+    //     ]
+    //     slice: [
+    //     ]
+    // }
+
+    // const form = document.querySelector('form')
+
+    // form.on('click', function(){
+
+    // })
+
+    // form.addEventListener('submit', function(event)) {
+    //     event.preventDefault();
+    //     const sizeSelected = document.querySelector
+    }
+</script>
+</body>
+</html>

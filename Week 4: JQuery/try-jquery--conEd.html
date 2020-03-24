@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tutorial: manipulating the DOM with jQuery</title>
+  <style>
+    .highlight {
+      background: yellow;
+
+    
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tutorial: manipulating the DOM with jQuery</h1>
+
+  <p class="firstp">Paragraph 1: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, velit, rerum, aspernatur reiciendis cumque incidunt itaque at autem ullam earum rem asperiores. Sequi distinctio temporibus est provident veniam. Ab, iste.</p>
+
+  <p class="secondp">Paragraph 2: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, repudiandae, dolorum neque veritatis eos reprehenderit consequuntur velit dolores necessitatibus error nulla rerum nam vel quos quidem expedita molestias perspiciatis perferendis.</p>
+
+  <img src="https://placebeard.it/200/200">
+  <img src="https://placebeard.it/200/200">
+  <img src="https://placebeard.it/200/200">
+  <img src="https://placebeard.it/200/200">
+
+  <!-- Include jQuery below this line -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+  <script>
+
+  $(document).ready(function() {
+
+  });
+
+  $('h1').css('color', 'red');
+  $('p').css('color', 'blue')
+  $('.secondp').css('color', 'green')
+
+  const userName = prompt('Hey user! What\'s your name?');
+  $('h1').text(`Hello $[userName]`);
+
+  $(.img').fadeOut(6000);
+  $('.firstp').addClass('highlight'); -->
+<script>
+  const firstPtag = document.querySelector('.firstp');
+  firstPtag.textContent = 'this is some dope text';
+  </script>
+</body>
+</html>

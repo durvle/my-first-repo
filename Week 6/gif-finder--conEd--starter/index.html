@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- load in google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display:900" rel="stylesheet">
+    <!-- load in setup -->
+    <link rel="stylesheet" href="styles/setup.css">
+    <!-- load in styles -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Gif Finder</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="heading-text">
+                <h1>The <br>Gif Finder</h1>
+                <h2>you need today</h2>
+            </div>
+
+            <form action="#">
+                <label for="search-input">search keyword</label>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="money" id="search-input">
+                    <input type="submit" value="search">
+                </div>
+            </form>
+        </header>
+
+        <section class="results">
+        </section>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        // this is the namespace, it's called app (can be called anything)
+        const app ={};
+        app.apiKey = `tbEbMMTFVL6mMOH7JYf2LuEecWVCQ9Pk`;
+        app.init = () => {
+            app.setUpEventHandlers();
+            // app.getImages();
+        }
+        app.displayImages =(data)=>{
+            // data is the results from giphy
+            data.forEach(pieceOfData =>{
+                //make an HTML element for each gif
+                //with information about that specific gif
+                const pic =
+                `<div class="gif-box">
+                    <div class="img-box">
+                        <img src= '${pieceOfData.images.original_still.url}'
+                        alt='${pieceOfData.title}'/>
+                    </div>
+                    <p class='gif-title'>${pieceOfData.title}</p>
+                </div>`;
+                $('section.results').append(pic);
+            });
+            // go to the section and display some stuff
+        }
+        
+        app.getImages =(searchQuery)=>{
+            $.ajax({
+                url: `http://api.giphy.com/v1/gifs/search`,
+                method:'GET',
+                dataType:'json',
+                data:{
+                    api_key: app.apiKey,
+                    q:searchQuery
+                }
+            }).then(results => {
+                app.displayImages(results.data);
+                console.log(results.data);
+            });
+        }
+        app.setUpEventHandlers =()=>{
+            $('form').on('submit', function(event){
+                event.preventDefault();
+                const searchString = $('#search-input').val();
+                if(searchString === ''){
+                    alert('You have to search for something!')
+                } else {
+                    $('section.results').empty();
+                    app.getImages(searchString);
+                }
+            })
+       }
+       
+        $(document).ready(()=>{
+            app.init();
+        });
+    </script>
+</body>
+</html>

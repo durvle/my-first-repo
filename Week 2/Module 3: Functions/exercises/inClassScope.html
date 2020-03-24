@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // let globallyAvailableVariable = true;
+    // console.log(globallyAvailableVariable);
+
+    // const catName = (name) =>{
+    //     const whatICallMyCat = `Ms.${name}`;
+    //     return name;
+    // }
+    //     console.log(whatICallMyCat)
+
+    function calculateBill(price){
+        function calculateTax(singlePrice){
+            return singlePrice * 1.13
+        };
+        return calculateTax(price);
+    }
+    console.log(calculateBill(100))
+    </script>
+</body>
+</html>

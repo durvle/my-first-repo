@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>Don't forget to open your console to see the output!</p>
+	<script>
+		//EXERCISE 1
+		// 1. Ask the user for their age.
+		// 2. Store the answer and convert their age into dog years by multiplying their age by 7.
+		// 3. Console log the string: If you were a dog you'd be --- years old.
+		const age = prompt("What's your age in years?");
+		const ageInDogYears = age * 7;
+		console.log(`If you were a dog you'd be ${ageInDogYears} years old`);
+
+		//EXERCISE 2
+		// 1. Create a variable that stores the price for an item in your store.
+		// 2. Ask the user for the quantity of that item they would like to purchase.
+		// 3. Calculate the tax on the purchase.
+		// 4. Console log the string: The total cost of your purchase is $---
+		// Bonus points if you can get it to show 2 decimals. (Google it!)
+		const unicornPrice = 9.99;
+		const quantity = prompt(`A unicorn costs $${unicornPrice}. How many unicorns would you like to purchase?`);
+		const priceBeforeTax = unicornPrice * quantity;
+		const salesTax = 0.13;
+		const priceWithTax = priceBeforeTax + (priceBeforeTax * salesTax);
+		const roundedPrice = priceWithTax.toFixed(2);
+		console.log(`The total cost of your purchase is $${roundedPrice}`);
+
+		// EXERCISE 3
+		//1. Create 3 variables that store user inputted values from a prompt.
+		//2. Use a built in JavaScript function to find the maximum of the three variables.
+		//3. Log the answer into the console using the sentence: The maximum number is --.
+		const num1 = prompt("First number");
+		const num2 = prompt("Second number");
+		const num3 = prompt("Third number");
+		const maxNumber = Math.max(num1, num2, num3);
+		console.log(`The maximum number is ${maxNumber}.`);
+
+		// EXERCISE 4
+		// 1. Ask the user for their name.
+		// 2. Use a built in function to convert their name to lowercase characters and store it in a new variable.
+		// 3. Use a built in function to convert their name to uppercase characters and store it in a new variable.
+		// 4. Console log both strings in the same line.
+		// Hint: Look into JavaScript String Methods
+		const name = prompt("Hey! What's your name?");
+		const lowerCaseName = name.toLowerCase();
+		const upperCaseName = name.toUpperCase();
+		console.log(lowerCaseName, upperCaseName);
+
+		// EXERCISE 5
+		// 1. Write some code that mimics a dice roll
+		// 2. Console log the sentence: You rolled a ----!
+		// Hint look into Math.random and Math.floor
+		// Bonus points if you write a function to call from the console so you can roll the dice multiple times without refreshing the page.
+		const roll = Math.floor(Math.random() * 6) + 1;
+		console.log(`You rolled a ${roll}!`);
+
+		// Bonus:
+
+		function getDiceRoll() {
+			const roll = Math.floor(Math.random() * 6) + 1;
+			console.log(`You rolled a ${roll}!`);
+		}
+
+	</script>
+</body>
+</html>
+
+

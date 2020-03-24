@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>An   Object   Lesson</title>
+</head>
+<body>
+<script>
+    const apple = {
+        size: 'medium sized',
+        color:'green',
+        ripe: false,
+        daysOld: 4,
+        qualities: {
+            scent:'piney',
+            skin:'waxy'
+        }
+    }
+    console.log(typeof apple)
+
+    const warrior = {
+        equipment: "shield",
+        energy: 100,
+        location = {
+            x: 35,
+            y: 984,
+        walk: function() {
+            return warrior.location.x
+        }
+        }
+    }
+</script>
+<!-- a method walk() which updates the warrior's location. For example, if the warrior's location is x:10 and y:5 then walk(2, 0) will update the location to x:12 and y:5. -->
+</body>
+</html>

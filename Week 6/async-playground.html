@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     const gettingTheTomatoPaste = ()=>{
+    //         let x;
+    //         setTimeout(()=>{
+    //             x = 'tomato paste!'
+    //             console.log(x)
+    //         }, 2000)
+    //         console.log(x)
+    //     }
+    
+    // gettingTheTomatoPaste();
+
+
+
+
+    </script>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'>
+    </script>
+    <script>
+    //     $.ajax("https://api.github.com/users/hackeryou", {
+    //     method:"GET",
+    //     dataType:'json'
+    // }).then((response)=>{
+    //     console.log(response);
+    // })
+
+    // $.ajax("https://myttc.ca/bathurst_station.json", {
+    //     method:"GET",
+    //     dataType:'jsonp' //json is the usual dataType//
+    // }).then((response)=>{
+    //     console.log(response);
+    // })
+
+    let year=2018;
+    const changeYear = (newYear) =>{
+        year=newYear;
+    }
+    const getData =()=>
+        {$.ajax({
+        url:`https://api.spacexdata.com/v3/launches?launch_year=${year}`,
+        method:'GET',
+        dataType:'json',
+        // data:{
+        //     rocket_id:'falconheavy',
+        //     launch_year:'2018'
+        // }
+
+    }).then(response =>{
+        console.log(response)
+        // return response;
+    });
+}
+    </script>
+</body>
+</html>

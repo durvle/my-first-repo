@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const globalThis = this;
+        const myBasket = {
+            apples: 1,
+            increment: function() {
+                this.apples += 1                
+  }
+}
+        
+    const myObject = {
+    name: "My Object",
+    getMyObjThis: function() {
+        console.log("getMyObjThis 'this':", this);
+    },
+        myNestedObject: {
+            name: "My Nested Object",
+            getMyNestedObjectThis: function() {
+                console.log("getMyNestedObjectThis 'this':", this);
+            
+            }
+        }
+    }
+
+// arrow functions direct *this* to the window
+    const es6Object = {
+	name: "ES6 Object",
+	getEs6ObjThis: () => {
+		console.log("getEs6ObjThis 'this':", this);
+	}
+}
+    </script>
+</body>
+</html>

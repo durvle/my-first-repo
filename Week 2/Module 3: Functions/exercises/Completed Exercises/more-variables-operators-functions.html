@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>Don't forget to open your console to see the output!</p>
+	<script>
+
+		// For the exercises below, try writing some pseudocode to help you break down the tasks more if needed.
+
+		// EXERCISE 1
+		// 1. Ask the user for their age.
+		// 2. Store the answer and convert their age into dog years by multiplying their age by 7.
+		// 3. Console log the string: If you were a dog you'd be --- years old.
+
+		const yourAge = prompt("What is your age?")
+			const dogAge = (yourAge * 7);
+			console.log(`If you were a dog you'd be ${dogAge}`)
+		
+		
+		
+		//EXERCISE 2
+		// 1. Create a variable that stores the price for an item in your store.
+		// 2. Ask the user for the quantity of that item they would like to purchase.
+		// 3. Calculate the tax on the purchase.
+		// 4. Console log the string: The total cost of your purchase is $---
+		// Bonus points if you can get it to show 2 decimals. (Google it!)
+		let priceOfPaper = 17.59
+		let userQuantity = prompt("How many would you like to purchase today?");
+		const priceBeforeTax = priceOfPaper*userQuantity
+		const tax = 0.13
+		const priceAfterTax = priceBeforeTax + (priceBeforeTax*tax)
+		let roundedTotal = priceAfterTax.toFixed(2);
+		console.log(`The total cost of your purchase is ${roundedTotal}`)
+
+
+		// const calculatePrice = (quantity, price, tax) => {
+		// 	return totalCost = ((quantity * price)* tax);
+			
+		// }
+
+		// const myTotal = calculatePrice(5.00, 7, 1.13);
+
+		// console.log(myTotal);
+		
+
+	// 	function calculateBill(price){
+    //     function calculateTax(singlePrice){
+    //         return singlePrice * 1.13
+    //     };
+    //     return calculateTax(price);
+    // }
+	// console.log(calculateBill(100))
+	
+		// EXERCISE 3
+		//1. Create 3 variables that store user inputted values from a prompt.
+		//2. Use a built in JavaScript function to find the maximum of the three variables.
+		//3. Log the answer into the console using the sentence: The maximum number is --.
+
+		let age = prompt("What is your age?");
+		let height = prompt("What is your height?");
+		let weight = prompt("How much do you weigh?")
+		const maxNumber = Math.max(age, height, weight)
+		
+		console.log(`The maximum number is ${maxNumber}`)
+
+ 		// EXERCISE 4
+		// 1. Ask the user for their name.
+		// 2. Use a built in function to convert their name to lowercase characters and store it in a new variable.
+		// 3. Use a built in function to convert their name to uppercase characters and store it in a new variable.
+		// 4. Console log both strings in the same line.
+		// Hint: Look into JavaScript String Methods
+
+		const userName = prompt("What is your name?")
+		nameLowerCase = userName.toLowerCase()
+		nameUpperCase = userName.toUpperCase()
+		
+		console.log(nameLowerCase, nameUpperCase)
+    	// EXERCISE 5
+    	// 1. Write some code that mimics a dice roll
+    	// 2. Console log the sentence: You rolled a ----!
+    	// Hint look into Math.random and Math.floor
+    	// Bonus points if you write a function to call from the console so you can roll the dice multiple times without refreshing the page.
+
+		// let rollDice = Math.floor(Math.random()* 12) + 1;
+		// 	console.log(`You rolled a ${rollDice}`)
+		
+			function diceRoll() {
+			const rollDice = Math.floor(Math.random() * 12) + 1;
+			console.log(`You rolled a ${rollDice}!`);
+		}
+	</script>
+</body>
+</html>
